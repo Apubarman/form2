@@ -79,6 +79,32 @@
               </div>
             </div>
           </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Father's Name</label>
+              <input ngModel name="fatherName" #fatherName="ngModel" change="log(fatherName)" type="text" class="form-control" id="fullname"
+                placeholder="Father's Name" required minlength="3" maxlength="10" ngModel pattern="[a-zA-Z ]*" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="fatherName.touched && !fatherName.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="fatherName.errors.required">Father's Name is required.</div>
+                <div *ngIf="fatherName.errors.minlength">Father's Name should be minimum length {{ fatherName.errors.minlength.requiredLength }} charecters.</div>
+                <div *ngIf="fatherName.errors.pattern">Father's Name doesn't matched pattern.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Mother's Name</label>
+              <input ngModel name="mothersName" #mothername="ngModel" change="log(mothername)" type="text" class="form-control" id="mothername"
+                placeholder="Mother's Name" required minlength="3" maxlength="10" ngModel pattern="[a-zA-Z ]*" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="mothername.touched && !mothername.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="mothername.errors.required">Firstname is required.</div>
+                <div *ngIf="mothername.errors.minlength">Firstname should be minimum length {{ fullName.errors.minlength.requiredLength }} charecters.</div>
+                <div *ngIf="mothername.errors.pattern">Firstname doesn't matched pattern.</div>
+              </div>
+            </div>
+          </div>
         
         </div>
       
