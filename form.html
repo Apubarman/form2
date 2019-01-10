@@ -1,0 +1,139 @@
+<div class="container" style="margin-top:25px; padding: 20px;">
+  <div class="card" style="width: 70rem; padding:20px;">
+    <h1 style="color:rgb(46, 46, 46)">Contact Us</h1>
+    <div style="height:1px; background-color: rgb(139, 139, 139);"></div>
+    <div class="card-body">
+      <form>
+        <br>
+        <div class="row">
+        
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">First Name</label>
+              <input ngModel name="fullName" #fullName="ngModel" change="log(fullName)" type="text" class="form-control" id="fullname"
+                placeholder="First Name" required minlength="3" maxlength="10" ngModel pattern="[a-zA-Z ]*" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="fullName.touched && !fullName.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="fullName.errors.required">Firstname is required.</div>
+                <div *ngIf="fullName.errors.minlength">Firstname should be minimum length {{ fullName.errors.minlength.requiredLength }} charecters.</div>
+                <div *ngIf="fullName.errors.pattern">Firstname doesn't matched pattern.</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Email address</label>
+              <input required email ngModel name="email" #email="ngModel" change="log(email)" type="email" class="form-control" id="email"
+                placeholder="name@example.com" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="email.touched && !email.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="email.errors.required">Email is required.</div>
+                <div *ngIf="email.errors.email">Email is invalid.</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Phone Number</label>
+              <input required minlength="11" number ngModel name="phoneNumber" #phoneNumber="ngModel" change="log(phoneNumber)" type="number"
+                class="form-control" id="phoneNumber" placeholder="Phone Number" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="phoneNumber.touched && !phoneNumber.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="phoneNumber.errors.required">Phone Number is required.</div>
+                <div *ngIf="phoneNumber.errors.minlength">Phone Number should be minimum length {{ phoneNumber.errors.minlength.requiredLength }} charecters.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Parmanent Address</label>
+              <input required minlength="10" ngModel name="parmanentAddress" #parmanentAddress="ngModel" change="log(parmanentAddress)" type="text"
+                class="form-control" id="parmanentAddress" placeholder="Parmanent Address" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="parmanentAddress.touched && !parmanentAddress.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="parmanentAddress.errors.required">Parmanent Address is required.</div>
+                <div *ngIf="parmanentAddress.errors.minlength">Phone Number should be minimum length {{ parmanentAddress.errors.minlength.requiredLength }} charecters.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Current Address</label>
+              <input required minlength="10" ngModel name="currentAddress" #currentAddress="ngModel" change="log(currentAddress)" type="text"
+                class="form-control" id="currentAddress" placeholder="Current Address" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="currentAddress.touched && !currentAddress.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="currentAddress.errors.required">Current Address is required.</div>
+                <div *ngIf="currentAddress.errors.minlength">Current Address should be minimum length {{ currentAddress.errors.minlength.requiredLength }} charecters.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 col-md-4">
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Voter ID</label>
+              <input required minlength="12" number ngModel name="voterID" #voterID="ngModel" change="log(voterID)" type="number"
+                class="form-control" id="phoneNumber" placeholder="Voter ID" style="width:100%;">
+              <div class="alert alert-danger" *ngIf="voterID.touched && !voterID.valid" style="margin-top:5px; margin-top:5px; background-color:white; border: none; color:red;">
+                <div *ngIf="voterID.errors.required">Voter ID is required.</div>
+                <div *ngIf="voterID.errors.minlength">Voter ID should be minimum length {{ voterID.errors.minlength.requiredLength }} charecters.</div>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+      
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Comment</label>
+          <textarea ngModel name="comment" #commentbox="ngModel" change="log(commentbox)" class="form-control" id="commentbox" rows="3"
+            required></textarea>
+          <div class="alert alert-danger" *ngIf="commentbox.touched && !commentbox.valid" style="margin-top:5px; background-color:white; border: none; color:red;">
+            <div *ngIf="commentbox.errors.required">Comment is required.</div>
+          </div>
+        </div>
+      
+        <button type="button" class="btn btn-light" style="margin-right:5px;">Cancle</button>  <button type="button" class="btn btn-info">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
